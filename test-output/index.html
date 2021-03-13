@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-TestRunner">
+              <span class="suite-name border-failed">TestRunner</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-TestRunner">
+                    <span>D:\Selenium WorkSpace\Dec2020POMSeies\src\test\resources\TestRunner\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-TestRunner">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-TestRunner">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-TestRunner">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-TestRunner">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-TestRunner">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-TestRunner">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">6 methods, 5 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-TestRunner" class="hide-methods failed suite-TestRunner"> (hide)</a> <!-- hide-methods failed suite-TestRunner -->
+                      <a href="#" panel-name="suite-TestRunner" class="show-methods failed suite-TestRunner"> (show)</a> <!-- show-methods failed suite-TestRunner -->
+                    </span>
+                    <div class="method-list-content failed suite-TestRunner">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunner" title="com.qa.opencart.Test.AccountPageTest" hash-for-method="AccountPageHeaderCountTest">AccountPageHeaderCountTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunner" title="com.qa.opencart.Test.AccountPageTest" hash-for-method="AccountpagetitleTest">AccountpagetitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunner" title="com.qa.opencart.Test.AccountPageTest" hash-for-method="doSerachTest">doSerachTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunner" title="com.qa.opencart.Test.AccountPageTest" hash-for-method="selectProductTest">selectProductTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunner" title="com.qa.opencart.Test.AccountPageTest" hash-for-method="verifygetAccountpageHeaderText">verifygetAccountpageHeaderText</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-TestRunner -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-TestRunner" class="hide-methods passed suite-TestRunner"> (hide)</a> <!-- hide-methods passed suite-TestRunner -->
+                      <a href="#" panel-name="suite-TestRunner" class="show-methods passed suite-TestRunner"> (show)</a> <!-- show-methods passed suite-TestRunner -->
+                    </span>
+                    <div class="method-list-content passed suite-TestRunner">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestRunner" title="com.qa.opencart.Test.AccountPageTest" hash-for-method="accPageLogoTest">accPageLogoTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-TestRunner -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-TestRunner" class="panel TestRunner">
+          <div class="suite-TestRunner-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.opencart.Test.AccountPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AccountPageHeaderCountTest">
+                  </a> <!-- AccountPageHeaderCountTest -->
+                  <span class="method-name">AccountPageHeaderCountTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [4] but found [0]
+	at com.qa.opencart.Test.AccountPageTest.AccountPageHeaderCountTest(AccountPageTest.java:35)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="AccountpagetitleTest">
+                  </a> <!-- AccountpagetitleTest -->
+                  <span class="method-name">AccountpagetitleTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;My Account&quot;. Current title: &quot;Search - macbookmacbook&quot; (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ADMIN-PC&apos;, ip: &apos;192.168.47.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_131&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\ADMIN\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59722}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dbaabcb165c408b6a3f5f22043e40f4b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.qa.opencart.util.ElementUtil.waitforTitleIs(ElementUtil.java:215)
+	at com.qa.opencart.pages.AccountPage.getPageTitle(AccountPage.java:32)
+	at com.qa.opencart.Test.AccountPageTest.AccountpagetitleTest(AccountPageTest.java:27)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="doSerachTest">
+                  </a> <!-- doSerachTest -->
+                  <span class="method-name">doSerachTest</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at org.openqa.selenium.interactions.Actions.&lt;init&gt;(Actions.java:65)
+	at com.qa.opencart.util.ElementUtil.&lt;init&gt;(ElementUtil.java:31)
+	at com.qa.opencart.pages.SerachResultPage.&lt;init&gt;(SerachResultPage.java:22)
+	at com.qa.opencart.pages.AccountPage.doSearch(AccountPage.java:63)
+	at com.qa.opencart.Test.AccountPageTest.doSerachTest(AccountPageTest.java:56)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="selectProductTest">
+                  </a> <!-- selectProductTest -->
+                  <span class="method-name">selectProductTest</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at org.openqa.selenium.interactions.Actions.&lt;init&gt;(Actions.java:65)
+	at com.qa.opencart.util.ElementUtil.&lt;init&gt;(ElementUtil.java:31)
+	at com.qa.opencart.pages.SerachResultPage.&lt;init&gt;(SerachResultPage.java:22)
+	at com.qa.opencart.pages.AccountPage.doSearch(AccountPage.java:63)
+	at com.qa.opencart.Test.AccountPageTest.selectProductTest(AccountPageTest.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifygetAccountpageHeaderText">
+                  </a> <!-- verifygetAccountpageHeaderText -->
+                  <span class="method-name">verifygetAccountpageHeaderText</span>
+                  <div class="stack-trace">java.lang.AssertionError: lists don&apos;t have the same size expected [4] but found [0]
+	at com.qa.opencart.Test.AccountPageTest.verifygetAccountpageHeaderText(AccountPageTest.java:44)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestRunner-class-failed -->
+          <div class="suite-TestRunner-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.opencart.Test.AccountPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="accPageLogoTest">
+                  </a> <!-- accPageLogoTest -->
+                  <span class="method-name">accPageLogoTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestRunner-class-passed -->
+        </div> <!-- panel TestRunner -->
+        <div panel-name="test-xml-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\Selenium WorkSpace\Dec2020POMSeies\src\test\resources\TestRunner\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;TestRunner&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.qa.opencart.Listeners.ExtentReportListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;OpenDemoCart&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qa.opencart.Test.AccountPageTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- OpenDemoCart --&gt;
+&lt;/suite&gt; &lt;!-- TestRunner --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for TestRunner</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">OpenDemoCart (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for TestRunner</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for TestRunner</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_TestRunner');
+function tableData_TestRunner() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(6);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'selectProductTest')
+data.setCell(0, 2, 'com.qa.opencart.Test.AccountPageTest')
+data.setCell(0, 3, 45310);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'doSerachTest')
+data.setCell(1, 2, 'com.qa.opencart.Test.AccountPageTest')
+data.setCell(1, 3, 43927);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'accPageLogoTest')
+data.setCell(2, 2, 'com.qa.opencart.Test.AccountPageTest')
+data.setCell(2, 3, 22065);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'AccountpagetitleTest')
+data.setCell(3, 2, 'com.qa.opencart.Test.AccountPageTest')
+data.setCell(3, 3, 5195);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'AccountPageHeaderCountTest')
+data.setCell(4, 2, 'com.qa.opencart.Test.AccountPageTest')
+data.setCell(4, 3, 210);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifygetAccountpageHeaderText')
+data.setCell(5, 2, 'com.qa.opencart.Test.AccountPageTest')
+data.setCell(5, 3, 119);
+window.suiteTableData['TestRunner']= { tableData: data, tableDiv: 'times-div-TestRunner'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-TestRunner">
+              </div> <!-- times-div-TestRunner -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for TestRunner</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-TestRunner" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.opencart.Test.AccountPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">Accsetup</span>
+                <span class="method-start">32662 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">accPageLogoTest</span>
+                <span class="method-start">103006 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">doSerachTest</span>
+                <span class="method-start">127705 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">selectProductTest</span>
+                <span class="method-start">172655 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">AccountpagetitleTest</span>
+                <span class="method-start">218554 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">AccountPageHeaderCountTest</span>
+                <span class="method-start">224488 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifygetAccountpageHeaderText</span>
+                <span class="method-start">225378 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">226113 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

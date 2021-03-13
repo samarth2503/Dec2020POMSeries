@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestRunner]">
+  <listeners>
+    <listener class-name="com.qa.opencart.Listeners.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" name="OpenDemoCart(failed)">
+    <classes>
+      <class name="com.qa.opencart.Test.AccountPageTest">
+        <methods>
+          <include name="doSerachTest"/>
+          <include name="Accsetup"/>
+          <include name="AccountpagetitleTest"/>
+          <include name="AccountPageHeaderCountTest"/>
+          <include name="setup"/>
+          <include name="selectProductTest"/>
+          <include name="tearDown"/>
+          <include name="verifygetAccountpageHeaderText"/>
+        </methods>
+      </class> <!-- com.qa.opencart.Test.AccountPageTest -->
+    </classes>
+  </test> <!-- OpenDemoCart(failed) -->
+</suite> <!-- Failed suite [TestRunner] -->

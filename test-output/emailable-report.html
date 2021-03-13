@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">TestRunner</th></tr>
+<tr><td><a href="#t0">OpenDemoCart</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">5</td><td class="num">227,568</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestRunner</th></tr></tbody><tbody id="t0"><tr><th colspan="4">OpenDemoCart &#8212; failed</th></tr><tr class="failedeven"><td rowspan="5">com.qa.opencart.Test.AccountPageTest</td><td><a href="#m0">AccountPageHeaderCountTest</a></td><td rowspan="1">1615313835368</td><td rowspan="1">210</td></tr><tr class="failedeven"><td><a href="#m1">AccountpagetitleTest</a></td><td rowspan="1">1615313829434</td><td rowspan="1">5195</td></tr><tr class="failedeven"><td><a href="#m2">doSerachTest</a></td><td rowspan="1">1615313738585</td><td rowspan="1">43927</td></tr><tr class="failedeven"><td><a href="#m3">selectProductTest</a></td><td rowspan="1">1615313783535</td><td rowspan="1">45310</td></tr><tr class="failedeven"><td><a href="#m4">verifygetAccountpageHeaderText</a></td><td rowspan="1">1615313836258</td><td rowspan="1">119</td></tr><tr><th colspan="4">OpenDemoCart &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.opencart.Test.AccountPageTest</td><td><a href="#m5">accPageLogoTest</a></td><td rowspan="1">1615313713886</td><td rowspan="1">22065</td></tr></tbody>
+</table>
+<h2>OpenDemoCart</h2><h3 id="m0">com.qa.opencart.Test.AccountPageTest#AccountPageHeaderCountTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [4] but found [0]
+	at com.qa.opencart.Test.AccountPageTest.AccountPageHeaderCountTest(AccountPageTest.java:35)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.qa.opencart.Test.AccountPageTest#AccountpagetitleTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;My Account&quot;. Current title: &quot;Search - macbookmacbook&quot; (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ADMIN-PC&apos;, ip: &apos;192.168.47.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_131&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\ADMIN\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59722}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dbaabcb165c408b6a3f5f22043e40f4b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.qa.opencart.util.ElementUtil.waitforTitleIs(ElementUtil.java:215)
+	at com.qa.opencart.pages.AccountPage.getPageTitle(AccountPage.java:32)
+	at com.qa.opencart.Test.AccountPageTest.AccountpagetitleTest(AccountPageTest.java:27)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.qa.opencart.Test.AccountPageTest#doSerachTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at org.openqa.selenium.interactions.Actions.&lt;init&gt;(Actions.java:65)
+	at com.qa.opencart.util.ElementUtil.&lt;init&gt;(ElementUtil.java:31)
+	at com.qa.opencart.pages.SerachResultPage.&lt;init&gt;(SerachResultPage.java:22)
+	at com.qa.opencart.pages.AccountPage.doSearch(AccountPage.java:63)
+	at com.qa.opencart.Test.AccountPageTest.doSerachTest(AccountPageTest.java:56)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.qa.opencart.Test.AccountPageTest#selectProductTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at org.openqa.selenium.interactions.Actions.&lt;init&gt;(Actions.java:65)
+	at com.qa.opencart.util.ElementUtil.&lt;init&gt;(ElementUtil.java:31)
+	at com.qa.opencart.pages.SerachResultPage.&lt;init&gt;(SerachResultPage.java:22)
+	at com.qa.opencart.pages.AccountPage.doSearch(AccountPage.java:63)
+	at com.qa.opencart.Test.AccountPageTest.selectProductTest(AccountPageTest.java:63)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.qa.opencart.Test.AccountPageTest#verifygetAccountpageHeaderText</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: lists don&apos;t have the same size expected [4] but found [0]
+	at com.qa.opencart.Test.AccountPageTest.verifygetAccountpageHeaderText(AccountPageTest.java:44)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.qa.opencart.Test.AccountPageTest#accPageLogoTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>
