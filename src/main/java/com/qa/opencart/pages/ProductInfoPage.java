@@ -21,10 +21,12 @@ public class ProductInfoPage {
 	private By productPricedata = By.cssSelector("div#content ul.list-unstyled:nth-of-type(2) li"); 
 	private By Quantity = By.id("input-quantity");
 	private By AddtoCart = By.xpath("//button[text()='Add to Cart']");
-	private By successmsg = By.cssSelector("alert-success");
+	private By successmsg = By.xpath("//div[contains(@class,'alert-success')]");
 	private By itemBtn = By.xpath("//div[@id='cart']/button");
-	
+	private By tableRow = By.xpath("//table[@class='table table-bordered']//tr");
+	private By unitprice = By.xpath("//h2[starts-with(text(),'$')]");
 	private By viewCart = By.cssSelector("p.text-right>a:nth-of-type(1)");
+
 	
 	
 	public ProductInfoPage(WebDriver driver)
@@ -74,17 +76,56 @@ public class ProductInfoPage {
 		element.doSendKeys(Quantity, qyt);
 	}
 	
-	public String addToCart(By locator)
+	public String getQuantity()
+	{
+		return element.getElementText(Quantity);
+	}
+	
+	public String addToCart()
 	{
 		element.doClick(AddtoCart);
+		element.waitForVisibilityofElement(successmsg, 100);
 		return element.getElementText(successmsg);
+	}
+	
+	public String getUnitPrice()
+	{
+		return element.getElementText(unitprice);
+	}
+	
+	public String gettotalPrice()
+	{
+		int qty = Integer.parseInt(getQuantity());
+		int unitpr = Integer.parseInt(getUnitPrice());
+		
+		int total = qty*unitpr;
+		
+		return String.valueOf(total);
 	}
 	
 	public ShoppingCart navigateToViewCart()
 	{
 		element.doClick(itemBtn);
+		collectCartData();
 		element.doClick(viewCart);
 		return new ShoppingCart(driver);
 	}
-
+	
+	public Map<String,String> collectCartData()
+	{
+		int rows = element.getElements(tableRow).size();
+		
+		HashMap<String,String> hm = new HashMap<String,String>();
+		
+		for(int i=1;i<=rows;i++)
+		{
+			String key = driver.findElement(By.xpath("//table[@class='table table-bordered']//tr['"+i+"']//td[1]//strong")).getText();
+			String value = driver.findElement(By.xpath("//table[@class='table table-bordered']//tr['"+i+"']//td[2]")).getText();
+			
+			hm.put(key, value);
+		}
+		
+		return hm;
+	}
+	
 }

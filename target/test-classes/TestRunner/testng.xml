@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TestRunner">
- <listeners>
-  	<listener class-name="com.qa.opencart.Listeners.ExtentReportListener"/>
-  	<!-- <listener class-name="com.qa.opencart.Listeners.TestAllureListner"/>  -->
-  </listeners>
-  <test name="OpenDemoCart">
+<suite name="OpenDemoCart Suite">
+
+ <!--  <test name="LoginPageTest">
     <classes>
-      <class name="com.qa.opencart.Test.RegisterPageTest"/>
+      <class name="com.qa.opencart.Test.LoginPageTest"/>
     </classes>
-  </test> <!-- OpenDemoCart -->
-</suite> <!-- TestRunner -->
+  </test> 
+  
+  <test name="AccountPageTest">
+    <classes>
+      <class name="com.qa.opencart.Test.AccountPageTest"/>
+    </classes>
+  </test>  
+  
+   <test name="ProductInfoTest">
+    <classes>
+      <class name="com.qa.opencart.Test.ProductTest"/>
+    </classes>
+  </test>  -->
+  
+   <test name="ShoppingCartTest">
+    <classes>
+      <class name="com.qa.opencart.Test.ShoppingCartTest"/>
+    </classes>
+  </test>
+  
+</suite> <!-- Suite -->

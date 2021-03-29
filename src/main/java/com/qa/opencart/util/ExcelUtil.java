@@ -11,7 +11,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelUtil {
 	
-	public static String Test_Data_Sheet="D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\ExcelData\\RegisterUsr.xlsx";
+	public static String Test_Data_Sheet="D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\ExcelData\\DataProvider.xlsx";
 	
 	private static Workbook book;
 	private static Sheet sheet;
@@ -34,7 +34,7 @@ public class ExcelUtil {
 			System.out.println("Columns are "+col);
 			data= new Object[row-1][col];
 		
-			for(int i=1;i<sheet.getLastRowNum();i++)
+			for(int i=1;i<row;i++)
 			{
 				for(int j=0;j<sheet.getRow(0).getLastCellNum();j++)
 				{
@@ -42,14 +42,16 @@ public class ExcelUtil {
 					try {
 						String a = sheet.getRow(i).getCell(j).toString();
 						System.out.println("Data is "+a);
-						if(a.equals("##"))
+						data[i-1][j]=sheet.getRow(i).getCell(j).toString();
+					/*	if(a.equals("##"))
 						{
 							break;
 						}
 						else
 						{
-							data[i-1][j]=sheet.getRow(i+1).getCell(j).toString();
-						}
+							
+						} */
+						
 					}
 					catch(NullPointerException e)
 					{
@@ -70,6 +72,8 @@ public class ExcelUtil {
 		} catch (InvalidFormatException e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println(data);
 		
 		return data;
 	}

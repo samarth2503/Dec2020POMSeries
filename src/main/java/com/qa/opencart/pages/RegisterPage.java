@@ -23,8 +23,8 @@ public class RegisterPage {
 	private By lastname = By.id("input-lastname");
 	private By email = By.id("input-email");
 	private By telephone = By.id("input-telephone");
-	private By password = By.id("input-telephone");
-	private By cnfPwd = By.id("input-telephone");
+	private By password = By.id("input-password");
+	private By cnfPwd = By.id("input-confirm");
 	private By agrCheckbox = By.xpath("//input[@name='agree']");
 	
 	private By continueBtn = By.xpath("//input[@value='Continue']");
@@ -34,7 +34,7 @@ public class RegisterPage {
 	private By logout = By.partialLinkText("Logout");
 	private By Regsiter = By.partialLinkText("Register");
 	
-	public boolean registerUser(String firstname,String lastname,String email,String telephone,String password,String cnfpassword,String privacyPolicy,String subscribe)
+	public boolean registerUser(String firstname,String lastname,String telephone,String password,String subscribe)
 	{
 		element.doSendKeys(this.firstname, firstname);
 		
@@ -42,9 +42,11 @@ public class RegisterPage {
 		
 		element.doSendKeys(this.email, generatEmailId());
 		
+		element.doSendKeys(this.telephone, telephone);
+		
 		element.doSendKeys(this.password, password);
 		
-		element.doSendKeys(this.cnfPwd, cnfpassword);
+		element.doSendKeys(this.cnfPwd, password);
 		
 		if(subscribe.equals("Yes"))
 		{
@@ -79,9 +81,9 @@ public class RegisterPage {
 	
 	public String generatEmailId()
 	{
-		Random r = new Random(1000);
-		String a = String.format("%04d", r.nextInt());
-		return "automationTesting"+a+"@gmail.com";
+		Random r = new Random();
+		//String a = String.format("%04d", r.nextInt());
+		return "automationTesting"+r.nextInt(1000)+"@gmail.com";
 	}
 	
 

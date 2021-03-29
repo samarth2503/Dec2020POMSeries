@@ -18,7 +18,7 @@ public class AccountPageTest extends BaseTest{
 	@BeforeClass
 	public void Accsetup()
 	{
-		lp.doLogin(prop.getProperty("username"),prop.getProperty("password"));
+		accpage=lp.doLogin(prop.getProperty("username"),prop.getProperty("password"));
 	}
 	
 	@Test(priority=1)
@@ -44,13 +44,13 @@ public class AccountPageTest extends BaseTest{
 		Assert.assertEquals(actual, exp);
 	}
 	
-	@Test
+	@Test(priority=4)
 	public void accPageLogoTest()
 	{
 		Assert.assertTrue(accpage.isLogoDisplayed(),Error.LOGO_NOT_AVAILABLE_ERROR);
 	}
 	
-	@Test
+	@Test(priority=5)
 	public void doSerachTest()
 	{
 		sp=accpage.doSearch("macbook");

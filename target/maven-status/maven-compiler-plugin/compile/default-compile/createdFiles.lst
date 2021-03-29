@@ -3,12 +3,17 @@ com\qa\opencart\util\Error.class
 com\qa\opencart\util\ElementUtil.class
 com\qa\opencart\pages\LoginPage.class
 com\qa\opencart\Factory\DriverFactory.class
+com\qa\opencart\pages\DesktopsPage.class
 com\qa\opencart\util\Constants.class
 com\qa\opencart\Factory\OptionsManager.class
 com\qa\opencart\pages\ProductInfoPage.class
+com\qa\opencart\Listeners\TestAllureListener.class
+com\qa\opencart\pages\CommonPages.class
 com\qa\opencart\util\JavaScriptUtil.class
 com\qa\opencart\pages\ShoppingCart.class
 com\qa\opencart\pages\RegisterPage.class
+com\qa\opencart\pages\LaptopNotebookPage.class
+com\qa\opencart\pages\CartPage.class
 com\qa\opencart\Listeners\ExtentReportListener.class
 com\qa\opencart\util\ExcelUtil.class
 com\qa\opencart\Base\BaseTest.class

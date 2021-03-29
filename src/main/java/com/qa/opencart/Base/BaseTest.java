@@ -13,6 +13,7 @@ import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.SerachResultPage;
+import com.qa.opencart.pages.ShoppingCart;
 
 public class BaseTest {
 	
@@ -24,6 +25,7 @@ public class BaseTest {
 	public SerachResultPage sp; 
 	public ProductInfoPage prodInfo;
 	public RegisterPage register;
+	public ShoppingCart shopcart;
 	
 	public SoftAssert softassert = new SoftAssert();
 	
@@ -35,7 +37,7 @@ public class BaseTest {
 		driver=df.init_driver(prop);
 		driver.get(prop.getProperty("url"));
 		lp=new LoginPage(driver);
-		accpage = new AccountPage(driver);
+		//accpage = new AccountPage(driver);
 	}
 	
 	@AfterTest

@@ -25,9 +25,9 @@ public class RegisterPageTest extends BaseTest{
 	}
 	
 	@Test(dataProvider="getData")
-	public void userRegisterTest(String firstname,String lastname,String email,String telephone,String password,String cnfpassword,String privacyPolicy,String subscribe)
+	public void userRegisterTest(String firstname,String lastname,String telephone,String password,String subscribe)
 	{
-		Assert.assertTrue(register.registerUser(firstname, lastname, email, telephone, password, cnfpassword, privacyPolicy, subscribe),Error.REGISTRATION_NOT_SUCCESS_MSG);
+		Assert.assertTrue(register.registerUser(firstname, lastname, telephone, password, subscribe),Error.REGISTRATION_NOT_SUCCESS_MSG);
 	}
 
 

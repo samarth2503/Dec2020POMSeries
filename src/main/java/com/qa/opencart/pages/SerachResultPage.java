@@ -12,14 +12,15 @@ public class SerachResultPage {
 	
 	private WebDriver driver;
 	private By searchItemResult= By.cssSelector("div.product-layout div.product-thumb");
-	private By resultItem = By.cssSelector("div.product-layout div.product-thumb a");
-	
+	private By resultItem = By.cssSelector("div.product-thumb h4 a");
+	private By cartBtn = By.xpath("//div[@id='cart']");
 	
 	public ElementUtil element;
 	
 	public SerachResultPage(WebDriver driver)
 	{
-		this.element = new ElementUtil(driver);
+		this.driver = driver;
+		this.element = new ElementUtil(this.driver);
 	}
 	
 	public int getProductcount()
@@ -36,10 +37,12 @@ public class SerachResultPage {
 		{
 			if(e.getText().equals(prodName))
 			{
+				System.out.println("Product is "+e.getText());
 				e.click();
 				break;
 			}
 		}
+		element.waitForVisibilityofElement(cartBtn, 10);
 		
 		return new ProductInfoPage(driver);
 	}

@@ -1,5 +1,6 @@
 package com.qa.opencart.Test;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.annotations.BeforeClass;
@@ -25,7 +26,12 @@ public class ProductInfoTest extends BaseTest{
 		softassert.assertTrue(productInfo.get("price").equals("2000"));
 		softassert.assertTrue(productInfo.get("Brand").equals("Apple"));
 		softassert.assertAll();
+		
+		//productInfo.equals(o);
 	}
+	
+
+	
 	
 	
 }

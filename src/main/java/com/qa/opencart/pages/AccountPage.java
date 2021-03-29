@@ -21,19 +21,23 @@ public class AccountPage {
 	By Accheader = By.cssSelector("#content>ul");
 	By searchFeild = By.xpath("//input[@name='search']");
 	By searchBtn = By.xpath("//*[@id=\"search\"]/span/button");
+	By productimgs = By.cssSelector("div.product-layout");
 	
 	public AccountPage(WebDriver driver)
 	{
-		this.element = new ElementUtil(driver);
+		this.driver = driver;
+		this.element = new ElementUtil(this.driver);
 	}
 	
 	public String getPageTitle()
 	{
-		return element.waitforTitleIs(5, Constants.Account_page_title);
+		System.out.println("Account page title is "+driver.getTitle());
+		return element.waitforTitleIs(10, Constants.Account_page_title);
 	}
 	
 	public int getAccountpageHeaderCount()
 	{
+		element.waitForVisibilityofElement(Accheader, 30);
 		return element.getElements(Accheader).size();
 	}
 	
@@ -59,7 +63,7 @@ public class AccountPage {
 	{
 		element.doSendKeys(searchFeild, productName);
 		element.doClick(searchBtn);
-		
+		element.waitForVisibilityofElement(productimgs, 10);
 		return new SerachResultPage(driver);
 	}
 	
