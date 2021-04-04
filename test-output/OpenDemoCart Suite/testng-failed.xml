@@ -5,7 +5,9 @@
     <classes>
       <class name="com.qa.opencart.Test.ShoppingCartTest">
         <methods>
+          <include name="verifyWishList"/>
           <include name="ShoppingCartsetup"/>
+          <include name="BacktoHome"/>
           <include name="verifyProduct"/>
           <include name="tearDown"/>
           <include name="setup"/>

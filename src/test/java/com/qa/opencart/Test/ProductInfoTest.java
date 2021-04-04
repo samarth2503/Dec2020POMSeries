@@ -20,10 +20,10 @@ public class ProductInfoTest extends BaseTest{
 	public void productInfoDataTest()
 	{
 		sp=accpage.doSearch("macbook");
-		prodInfo=sp.selectProductFromResult("Macbook Pro");
+		prodInfo=sp.selectProductFromResult("iPhone");
 		Map<String,String> productInfo = prodInfo.getProductInformation();
-		softassert.assertTrue(productInfo.get("name").equals("Macbook"));
-		softassert.assertTrue(productInfo.get("price").equals("2000"));
+		softassert.assertTrue(productInfo.get("name").equals("iPhone"));
+		softassert.assertTrue(productInfo.get("price").equals("101.00"));
 		softassert.assertTrue(productInfo.get("Brand").equals("Apple"));
 		softassert.assertAll();
 		

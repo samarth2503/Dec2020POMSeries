@@ -21,7 +21,7 @@ public class ShoppingCart {
 	}
 	
 	private By ShoppingCartheader = By.cssSelector("#content h1");
-	private By ShoppingCartTable = By.cssSelector(".table table-bordered");
+	private By ShoppingCartTable = By.xpath("//form//table[@class='table table-bordered']");
 	private By productImage =By.xpath("(//div[@id='content']//table[@class='table table-bordered']//tbody)[1]//tr//td[1]");
 	private By productName = By.xpath("(//div[@id='content']//table[@class='table table-bordered']//tbody)[1]//tr//td[2]");
 	private By unitprice = By.xpath("(//div[@id='content']//table[@class='table table-bordered']//tbody)[1]//tr//td[5]");
@@ -42,18 +42,20 @@ public class ShoppingCart {
 	{
 		boolean check1,check2,check3,check4=true;
 		
-		element.waitForVisibilityofElement(ShoppingCartTable, 20);
+		element.waitForVisibilityofElement(ShoppingCartTable, 100);
 		
 		String pn = element.getElementText(productName);
 		
-		if(pn.equals(product))
+		if(pn.contains(product))
 		{
+			
 			System.out.println("Product Name is equal");
 			check1=true;
 		}
 		
 		else
 		{
+			System.out.println(pn);
 			System.out.println("Product Name is not Equal");
 			check1=false;
 		}
@@ -67,6 +69,7 @@ public class ShoppingCart {
 		}
 		else
 		{
+			System.out.println(qty);
 			System.out.println("Qunatity is not equal");
 			check2=true;
 		}
@@ -80,6 +83,7 @@ public class ShoppingCart {
 		}
 		else
 		{
+			System.out.println(ut);
 			System.out.println("Unit Price is not equal");
 			check3=false;
 		}
@@ -93,6 +97,7 @@ public class ShoppingCart {
 		}
 		else
 		{
+			System.out.println(tp);
 			System.out.println("Total Price is not equal");
 			check4=false;
 		}

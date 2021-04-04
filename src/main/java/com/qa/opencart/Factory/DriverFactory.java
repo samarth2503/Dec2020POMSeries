@@ -96,7 +96,7 @@ public class DriverFactory {
 		
 		
 		DriverFactory.getDriver().manage().window().maximize();
-		DriverFactory.getDriver().manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		DriverFactory.getDriver().manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
 		DriverFactory.getDriver().manage().deleteAllCookies();
 	
 		

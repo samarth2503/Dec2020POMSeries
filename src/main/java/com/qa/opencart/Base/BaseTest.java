@@ -9,11 +9,13 @@ import org.testng.asserts.SoftAssert;
 
 import com.qa.opencart.Factory.DriverFactory;
 import com.qa.opencart.pages.AccountPage;
+import com.qa.opencart.pages.CommonPages;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.SerachResultPage;
 import com.qa.opencart.pages.ShoppingCart;
+import com.qa.opencart.pages.WishList;
 
 public class BaseTest {
 	
@@ -26,6 +28,8 @@ public class BaseTest {
 	public ProductInfoPage prodInfo;
 	public RegisterPage register;
 	public ShoppingCart shopcart;
+	public CommonPages cp;
+	public WishList wh;
 	
 	public SoftAssert softassert = new SoftAssert();
 	
@@ -36,8 +40,8 @@ public class BaseTest {
 		prop=df.init_Prop();
 		driver=df.init_driver(prop);
 		driver.get(prop.getProperty("url"));
-		lp=new LoginPage(driver);
-		//accpage = new AccountPage(driver);
+		lp = new LoginPage(driver);
+		cp = new CommonPages(driver);
 	}
 	
 	@AfterTest

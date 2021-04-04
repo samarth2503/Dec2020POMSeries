@@ -26,6 +26,8 @@ public class ProductInfoPage {
 	private By tableRow = By.xpath("//table[@class='table table-bordered']//tr");
 	private By unitprice = By.xpath("//h2[starts-with(text(),'$')]");
 	private By viewCart = By.cssSelector("p.text-right>a:nth-of-type(1)");
+	private By NavigatetowhishList = By.xpath("//div[@class='btn-group']//button[contains(@class,'btn-default')][1]");
+	private By AddToWishList = By.xpath("(//div[@class='btn-group']//button)[5]");
 
 	
 	
@@ -76,10 +78,6 @@ public class ProductInfoPage {
 		element.doSendKeys(Quantity, qyt);
 	}
 	
-	public String getQuantity()
-	{
-		return element.getElementText(Quantity);
-	}
 	
 	public String addToCart()
 	{
@@ -90,15 +88,15 @@ public class ProductInfoPage {
 	
 	public String getUnitPrice()
 	{
-		return element.getElementText(unitprice);
+		return element.getElementText(unitprice).replace("$", "");
 	}
 	
-	public String gettotalPrice()
+	public String gettotalPrice(String qty)
 	{
-		int qty = Integer.parseInt(getQuantity());
-		int unitpr = Integer.parseInt(getUnitPrice());
+		int q = Integer.parseInt(qty);
+		int unitpr = (int) Double.parseDouble(getUnitPrice());
 		
-		int total = qty*unitpr;
+		int total = q*unitpr;
 		
 		return String.valueOf(total);
 	}
@@ -126,6 +124,14 @@ public class ProductInfoPage {
 		}
 		
 		return hm;
+	}
+	
+	public WishList addTowishList()
+	{
+		element.doClick(AddToWishList);
+		element.doClick(NavigatetowhishList);
+		
+		return new WishList(driver);
 	}
 	
 }

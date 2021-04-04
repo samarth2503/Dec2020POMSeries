@@ -2,6 +2,7 @@ package com.qa.opencart.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.opencart.util.ElementUtil;
 
@@ -26,6 +27,14 @@ public class CommonPages {
 	private By phonePDA = By.linkText("Phones & PDAs");
 	private By camera = By.linkText("Cameras");
 	
+	private By MyAccdrpdwn= By.xpath("//a[@title='My Account']");
+	private By logoutBtn = By.xpath("//ul[contains(@class,'dropdown-menu-right')]//li//a[contains(text(),'Logout')]");
+	
+	private By loginBtn = By.xpath("//ul[contains(@class,'dropdown-menu-right')]//li//a[contains(text(),'Login')]");
+	private By HomeBtn = By.xpath("(//ul[@class='breadcrumb']//a)[1]");
+	private By ContinueBtn = By.xpath("//a[contains(text(),'Continue')]");
+	private By MyAccount = By.xpath("//a[contains(text(),'My Account')]"); 
+	
 	public DesktopsPage naviagteToDesktop()
 	{
 		element.doMoveToElement(desktop);
@@ -39,6 +48,39 @@ public class CommonPages {
 		element.doClick(ShowAllLaptopsNotebooks);
 		return new LaptopNotebookPage(driver);
 		
+	}
+	
+	public void logoutUsingdp()
+	{
+		element.doActionclick(MyAccdrpdwn);
+		element.doClick(logoutBtn);
+		element.waitForVisibilityofElement(ContinueBtn, 30);
+		element.doClick(ContinueBtn);
+	}
+	
+	public void logInUsingdp()
+	{
+		element.waitForElementToBeClickable(MyAccdrpdwn,100);
+		element.doClick(MyAccdrpdwn);
+		element.doClick(loginBtn);
+	}
+	
+	public void goToHomePage()
+	{
+		element.waitForVisibilityofElement(HomeBtn, 20);
+		element.doClick(HomeBtn);
+	}
+	
+	public void gotoMyAccount()
+	{
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		element.doActionclick(MyAccdrpdwn);
+		element.doClick(MyAccount);
 	}
 	
 	

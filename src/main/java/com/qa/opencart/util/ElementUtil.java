@@ -261,11 +261,30 @@ public class ElementUtil {
 		
 	}
 	
-	public void waitForVisibilityofElement(By locator,long timeout)
+	public boolean waitForVisibilityofElement(By locator,long timeout)
+	{
+		boolean check=false;
+		WebDriverWait wait = new WebDriverWait(driver,timeout);
+		
+		WebElement el=wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		
+		if(el!=null)
+		{
+			check=true;
+		}
+		
+		return check;
+	}
+	
+	public void waitForElementToBeClickable(By locator,int timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,timeout);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-
+	
+	public String getAttribute(By Locator,String attr)
+	{
+		return getElement(Locator).getAttribute(attr);
+	}
 }

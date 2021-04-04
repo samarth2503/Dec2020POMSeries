@@ -23,6 +23,7 @@ public class AccountPage {
 	By searchBtn = By.xpath("//*[@id=\"search\"]/span/button");
 	By productimgs = By.cssSelector("div.product-layout");
 	
+	
 	public AccountPage(WebDriver driver)
 	{
 		this.driver = driver;

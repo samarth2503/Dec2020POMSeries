@@ -19,41 +19,57 @@ public class ShoppingCartTest extends BaseTest {
 	@BeforeMethod
 	public void ShoppingCartsetup()
 	{
+		//cp.logInUsingdp();
 		accpage=lp.doLogin(prop.getProperty("username"), prop.getProperty("password"));
-		sp=accpage.doSearch("iphone");
-		prodInfo=sp.selectProductFromResult("iPhone");
-		
 	}
 	
 	@Test(priority=1)
 	public void verifyProduct()
 	{
+		sp=accpage.doSearch("iphone");
+		prodInfo=sp.selectProductFromResult("iPhone");
 		Map<String,String> hm=prodInfo.getProductInformation();
 		prodInfo.selectQuantity("2");
 		prodInfo.addToCart();
+		String totalprice = "$"+prodInfo.gettotalPrice("2");
 		shopcart=prodInfo.navigateToViewCart();
-		prodInfo.getQuantity();
-		boolean flag=shopcart.ShoppingCartProduct(hm.get("name"),prodInfo.getQuantity(),hm.get("Ex Price"),prodInfo.gettotalPrice());
+		boolean flag=shopcart.ShoppingCartProduct(hm.get("name"),"2","$"+hm.get("Ex Price"),totalprice);
+		shopcart.deleteCart();
 		Assert.assertTrue(flag,Error.INVALID_PRODUCT_DATA);
-		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,enabled=true)
 	public void verifyCartTableTest()
-	{	
+	{
+		sp=accpage.doSearch("iphone");
+		prodInfo=sp.selectProductFromResult("iPhone");
 		prodInfo.selectQuantity("2");
 		prodInfo.addToCart();
 		Map<String,String> hm1 = prodInfo.collectCartData();
 		ShoppingCart shopcart = prodInfo.navigateToViewCart();
 		Map<String,String> hm2 = shopcart.footerCartData();
+		shopcart.deleteCart();
 		Assert.assertEquals(hm1, hm2,Error.INVALID_CART_DATA);
 		
 	}
 	
+	@Test(priority=3)
+	public void verifyWishList()
+	{
+		wh=prodInfo.addTowishList();
+		boolean flg=wh.verifyProductDetails();
+		Assert.assertTrue(flg);
+	}
+	
 	@AfterMethod
+	public void BacktoHome()
+	{
+		cp.gotoMyAccount();
+	}
+	
+	@AfterClass
 	public void tearDown()
 	{
-		shopcart.deleteCart();
 		driver.close();
 	}
 	
