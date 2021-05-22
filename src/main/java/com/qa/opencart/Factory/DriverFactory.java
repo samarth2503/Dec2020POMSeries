@@ -147,16 +147,18 @@ public class DriverFactory {
 		return tldriver.get();
 	}
 	
+	@SuppressWarnings("unused")
 	public Properties init_Prop()
 	{
 		prop=new Properties();
 		FileInputStream inp=null;
-		String env = System.getProperty("env");
+		//String env = System.getProperty("env");
+		String env = "qa";
 		
 		if(env==null)
 		{
 			try {
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\config.properties");
 				
 			} catch (FileNotFoundException e) {
 				
@@ -170,16 +172,16 @@ public class DriverFactory {
 				switch(env) {
 					
 			case "qa":
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\qa.config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\qa.config.properties");
 				
 				break;
 				
 			case "stg":
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\stg.config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\stg.config.properties");
 				
 				break;
 			case "dev":
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\dev.config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\dev.config.properties");
 				
 				break;
 				
