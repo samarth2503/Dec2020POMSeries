@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [OpenDemoCart Suite]">
-  <test thread-count="5" name="ShoppingCartTest(failed)">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [OpenDemoCart Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="ProductInfoTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="version" value="86.0"/>
+    <classes>
+      <class name="com.qa.opencart.Test.ProductInfoTest">
+        <methods>
+          <include name="productInfoDataTest"/>
+          <include name="AccSetup"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.opencart.Test.ProductInfoTest -->
+    </classes>
+  </test> <!-- ProductInfoTest(failed) -->
+  <test thread-count="2" parallel="tests" name="ShoppingCartTest(failed)">
     <classes>
       <class name="com.qa.opencart.Test.ShoppingCartTest">
         <methods>
@@ -16,4 +30,20 @@
       </class> <!-- com.qa.opencart.Test.ShoppingCartTest -->
     </classes>
   </test> <!-- ShoppingCartTest(failed) -->
+  <test thread-count="2" parallel="tests" name="AccountPageTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="89.0"/>
+    <classes>
+      <class name="com.qa.opencart.Test.AccountPageTest">
+        <methods>
+          <include name="Accsetup"/>
+          <include name="AccountpagetitleTest"/>
+          <include name="AccountPageHeaderCountTest"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="verifygetAccountpageHeaderText"/>
+        </methods>
+      </class> <!-- com.qa.opencart.Test.AccountPageTest -->
+    </classes>
+  </test> <!-- AccountPageTest(failed) -->
 </suite> <!-- Failed suite [OpenDemoCart Suite] -->

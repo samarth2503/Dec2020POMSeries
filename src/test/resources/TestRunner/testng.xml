@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="OpenDemoCart Suite">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OpenDemoCart Suite" thread-count="2" parallel="tests">
 
- <!--  <test name="LoginPageTest">
+ <test name="LoginPageTest">
+ <parameter name="browser" value="chrome"/>
+  <parameter name="version" value="89.0"/>
     <classes>
       <class name="com.qa.opencart.Test.LoginPageTest"/>
     </classes>
   </test> 
   
   <test name="AccountPageTest">
+    <parameter name="browser" value="chrome"/>
+  <parameter name="version" value="89.0"/>
     <classes>
       <class name="com.qa.opencart.Test.AccountPageTest"/>
     </classes>
   </test>  
   
-   <test name="ProductInfoTest">
+  <test name="ProductInfoTest">
+  <parameter name="browser" value="firefox"/>
+  <parameter name="version" value="86.0"/>
     <classes>
-      <class name="com.qa.opencart.Test.ProductTest"/>
+      <class name="com.qa.opencart.Test.ProductInfoTest"/>
     </classes>
-  </test>  -->
+  </test>  
   
    <test name="ShoppingCartTest">
     <classes>
       <class name="com.qa.opencart.Test.ShoppingCartTest"/>
     </classes>
-  </test>
+  </test>  
   
-</suite> <!-- Suite -->
+
+</suite> 

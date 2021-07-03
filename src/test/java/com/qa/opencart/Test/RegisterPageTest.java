@@ -17,7 +17,7 @@ public class RegisterPageTest extends BaseTest{
 		register=lp.navigateToRegsiterPage();
 	}
 	
-	@DataProvider
+	@DataProvider(name="getData",parallel=true)
 	public Object[][] getData()
 	{
 		Object[][] data = ExcelUtil.getData("Register");

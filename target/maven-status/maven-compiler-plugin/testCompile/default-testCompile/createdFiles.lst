@@ -1,5 +1,5 @@
+com\qa\opencart\Test\ShoppingCartTest.class
 com\qa\opencart\Test\LoginPageTest.class
-com\qa\opencart\Test\HomePageTest.class
 com\qa\opencart\Test\RegisterPageTest.class
 com\qa\opencart\Test\AccountPageTest.class
 com\qa\opencart\Test\ProductInfoTest.class

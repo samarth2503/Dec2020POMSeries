@@ -11,7 +11,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelUtil {
 	
-	public static String Test_Data_Sheet="D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\ExcelData\\DataProvider.xlsx";
+	public static String Test_Data_Sheet="C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\ExcelData\\DataProvider.xlsx";
 	
 	private static Workbook book;
 	private static Sheet sheet;

@@ -65,7 +65,7 @@ public class ExtentReportListener extends DriverFactory implements ITestListener
 
 	public synchronized void onTestStart(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
-		String qualifiedName = result.getMethod().getQualifiedName();
+		String qualifiedName = result.getMethod().getMethodName();
 		int last = qualifiedName.lastIndexOf(".");
 		int mid = qualifiedName.substring(0, last).lastIndexOf(".");
 		String className = qualifiedName.substring(mid + 1, last);

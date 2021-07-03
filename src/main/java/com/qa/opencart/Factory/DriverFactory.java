@@ -33,20 +33,20 @@ public class DriverFactory {
 	
 	public static ThreadLocal<WebDriver> tldriver = new ThreadLocal<WebDriver>();
 	
-	public WebDriver init_driver(Properties prop)
+	public WebDriver init_driver(String browserName,String version)
 	{
+		String browser=null;
 		opt = new OptionsManager(prop);
 		
-		
-		String browserName=System.getProperty("browser");
-		String browser=null;
-		
-		if(browserName!=null)
+		// To get BrowserName form Maven or Jenkins Parameter
+		String browserEnv=System.getProperty("browser");
+
+		if(browserEnv!=null)
 		{
 			// To get the browser name from choice parameter
-			browser=browserName;
+			browser=browserEnv;
 		}
-		else
+		else if(prop.getProperty("browser")!=null)
 		{
 			// To fetch from config.properties file
 			browser = prop.getProperty("browser");
@@ -59,13 +59,16 @@ public class DriverFactory {
 		{
 			WebDriverManager.chromedriver().setup();
 			//driver=new ChromeDriver(opt.getChromeOptions());
-			if(Boolean.parseBoolean(System.getProperty("remote")))
+			System.out.println(prop.getProperty("remote"));
+			if(Boolean.parseBoolean(prop.getProperty("remote")))
 			{
+				System.out.println("Inside Remote Driver");
 				init_remotedriver(browser);
 				
 			}
 			else
 			{
+				//driver=new ChromeDriver();
 				tldriver.set(new ChromeDriver(opt.getChromeOptions()));
 			}
 			
@@ -74,7 +77,7 @@ public class DriverFactory {
 		{
 			WebDriverManager.firefoxdriver().setup();
 			//driver=new FirefoxDriver(opt.getfirefoxOptions());
-			if(Boolean.parseBoolean(System.getProperty("remote")))
+			if(Boolean.parseBoolean(prop.getProperty("remote")))
 			{
 				init_remotedriver(browser);
 			}
@@ -101,7 +104,7 @@ public class DriverFactory {
 	
 		
 		
-		return getDriver();
+		return DriverFactory.getDriver();
 	}
 	
 	
@@ -111,12 +114,12 @@ public class DriverFactory {
 		{
 			DesiredCapabilities cap = DesiredCapabilities.chrome();
 			cap.setCapability(ChromeOptions.CAPABILITY, opt.getChromeOptions());
-			cap.setCapability("browserName", "chrome");
-			cap.setCapability("enableVNC", true);
-			cap.setCapability("browserVersion", 80);
+//			cap.setCapability("browserName", "chrome");
+//			cap.setCapability("enableVNC", true);
+//			cap.setCapability("browserVersion", 89.0);
 			
 			try {
-				tldriver.set(new RemoteWebDriver(new URL(prop.getProperty("url")),cap));
+				tldriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")),cap));
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -128,10 +131,10 @@ public class DriverFactory {
 			cap.setCapability(FirefoxOptions.FIREFOX_OPTIONS, opt.getfirefoxOptions());
 			cap.setCapability("browserName", "firefox");
 			cap.setCapability("enableVNC", true);
-			cap.setCapability("browserVersion", 80);
+			cap.setCapability("browserVersion", 86.0);
 			
 			try {
-				tldriver.set(new RemoteWebDriver(new URL(prop.getProperty("url")),cap));
+				tldriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")),cap));
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -147,16 +150,18 @@ public class DriverFactory {
 		return tldriver.get();
 	}
 	
+	@SuppressWarnings("unused")
 	public Properties init_Prop()
 	{
 		prop=new Properties();
 		FileInputStream inp=null;
-		String env = System.getProperty("env");
+		//String env = System.getProperty("env");
+		String env = "qa";
 		
 		if(env==null)
 		{
 			try {
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\config.properties");
 				
 			} catch (FileNotFoundException e) {
 				
@@ -170,16 +175,17 @@ public class DriverFactory {
 				switch(env) {
 					
 			case "qa":
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\qa.config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\qa.config.properties");
+				System.out.println("Inside qa");
 				
 				break;
 				
 			case "stg":
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\stg.config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\stg.config.properties");
 				
 				break;
 			case "dev":
-				inp = new FileInputStream("D:\\Selenium WorkSpace\\Dec2020POMSeies\\src\\test\\resources\\config\\dev.config.properties");
+				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\dev.config.properties");
 				
 				break;
 				
@@ -204,6 +210,7 @@ public class DriverFactory {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("Input file is "+inp.toString());
 		
 		return prop;
 	}
