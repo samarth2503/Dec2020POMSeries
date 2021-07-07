@@ -12,7 +12,7 @@ agent any
             steps {
 		
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                	bat "git credentialsId: 'gitCred', url: 'https://github.com/samarth2503/Dec2020POMSeries'"
+                    bat "git 'https://github.com/samarth2503/Dec2020POMSeries.git"
                     bat "mvn clean install"
                 }
             }
