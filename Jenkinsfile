@@ -32,8 +32,7 @@ agent any
                 }
             }
         }
-        
-        
+       
         stage('Publish Extent Report'){
             steps{
                      publishHTML([allowMissing: false,
