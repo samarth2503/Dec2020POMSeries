@@ -176,7 +176,9 @@ public class DriverFactory {
 					
 			case "qa":
 				inp = new FileInputStream("C:\\Users\\samarth.jain\\eclipse-workspace\\Dec2020POMSeies\\src\\test\\resources\\config\\qa.config.properties");
+
 				System.out.println("Inside qa");
+
 				
 				break;
 				

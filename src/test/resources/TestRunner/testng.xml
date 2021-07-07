@@ -3,16 +3,20 @@
 <suite name="OpenDemoCart Suite" thread-count="2" parallel="tests">
 
  <test name="LoginPageTest">
+
  <parameter name="browser" value="chrome"/>
   <parameter name="version" value="89.0"/>
+
     <classes>
       <class name="com.qa.opencart.Test.LoginPageTest"/>
     </classes>
   </test> 
   
+
   <test name="AccountPageTest">
     <parameter name="browser" value="chrome"/>
   <parameter name="version" value="89.0"/>
+
     <classes>
       <class name="com.qa.opencart.Test.AccountPageTest"/>
     </classes>
@@ -30,7 +34,9 @@
     <classes>
       <class name="com.qa.opencart.Test.ShoppingCartTest"/>
     </classes>
+
   </test>  
+
   
 
 </suite> 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< HEAD
 <suite thread-count="2" parallel="tests" name="Failed suite [OpenDemoCart Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="2" parallel="tests" name="ProductInfoTest(failed)">
     <parameter name="browser" value="firefox"/>
@@ -16,6 +17,10 @@
     </classes>
   </test> <!-- ProductInfoTest(failed) -->
   <test thread-count="2" parallel="tests" name="ShoppingCartTest(failed)">
+=======
+<suite name="Failed suite [OpenDemoCart Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="ShoppingCartTest(failed)">
+>>>>>>> 6ffc817bafe6a68a1459077ec1198f2a901d7037
     <classes>
       <class name="com.qa.opencart.Test.ShoppingCartTest">
         <methods>

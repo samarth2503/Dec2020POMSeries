@@ -3,16 +3,23 @@
 <suite name="OpenDemoCart Suite" thread-count="2" parallel="tests">
 
  <test name="LoginPageTest">
+<<<<<<< HEAD
  <parameter name="browser" value="chrome"/>
   <parameter name="version" value="89.0"/>
+=======
+>>>>>>> 6ffc817bafe6a68a1459077ec1198f2a901d7037
     <classes>
       <class name="com.qa.opencart.Test.LoginPageTest"/>
     </classes>
   </test> 
   
+<<<<<<< HEAD
   <test name="AccountPageTest">
     <parameter name="browser" value="chrome"/>
   <parameter name="version" value="89.0"/>
+=======
+ <!-- <test name="AccountPageTest">
+>>>>>>> 6ffc817bafe6a68a1459077ec1198f2a901d7037
     <classes>
       <class name="com.qa.opencart.Test.AccountPageTest"/>
     </classes>
@@ -30,7 +37,11 @@
     <classes>
       <class name="com.qa.opencart.Test.ShoppingCartTest"/>
     </classes>
+<<<<<<< HEAD
   </test>  
+=======
+  </test>  !-->
+>>>>>>> 6ffc817bafe6a68a1459077ec1198f2a901d7037
   
 
 </suite> 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="0" total="13" passed="6" failed="5" skipped="2">
   <reporter-output>
   </reporter-output>
@@ -604,5 +605,37 @@ at java.base/java.lang.Thread.run(Thread.java:847)
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.opencart.Test.AccountPageTest -->
     </test> <!-- AccountPageTest -->
+=======
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-05-05T16:28:42Z" name="OpenDemoCart Suite" finished-at="2021-05-05T16:29:44Z" duration-ms="61911">
+    <groups>
+    </groups>
+    <test started-at="2021-05-05T16:28:42Z" name="LoginPageTest" finished-at="2021-05-05T16:29:44Z" duration-ms="61911">
+      <class name="com.qa.opencart.Test.LoginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.opencart.Test.LoginPageTest@8388e9ff]" started-at="2021-05-05T16:28:42Z" name="setup" finished-at="2021-05-05T16:28:50Z" duration-ms="8294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="titleTest()[pri:1, instance:com.qa.opencart.Test.LoginPageTest@8388e9ff]" started-at="2021-05-05T16:28:50Z" name="titleTest" finished-at="2021-05-05T16:28:50Z" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- titleTest -->
+        <test-method signature="forgotPwdLinkTest()[pri:2, instance:com.qa.opencart.Test.LoginPageTest@8388e9ff]" started-at="2021-05-05T16:28:51Z" name="forgotPwdLinkTest" finished-at="2021-05-05T16:28:59Z" duration-ms="8189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotPwdLinkTest -->
+        <test-method signature="LoginTest()[pri:3, instance:com.qa.opencart.Test.LoginPageTest@8388e9ff]" started-at="2021-05-05T16:28:59Z" name="LoginTest" finished-at="2021-05-05T16:29:43Z" duration-ms="43759" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.opencart.Test.LoginPageTest@8388e9ff]" started-at="2021-05-05T16:29:43Z" name="tearDown" finished-at="2021-05-05T16:29:44Z" duration-ms="1144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.opencart.Test.LoginPageTest -->
+    </test> <!-- LoginPageTest -->
+>>>>>>> 6ffc817bafe6a68a1459077ec1198f2a901d7037
   </suite> <!-- OpenDemoCart Suite -->
 </testng-results>
