@@ -46,8 +46,13 @@ agent any
             }
         }
         
-        
-        
     }
+    post{
+         
+         always{
+            echo "Sending Email....." 
+            emailext body: '$DEFAULT_CONTENT', subject: '$DEFAULT_SUBJECT', to: 'samarthjain680@gmail.com'
+         }
+     }
 
  }
