@@ -12,8 +12,8 @@ agent any
             steps {
 		
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    bat "git 'https://github.com/samarth2503/Dec2020POMSeries.git"
-                    bat "mvn clean install"
+                    bat 'git https://github.com/samarth2503/Dec2020POMSeries.git'
+                    bat 'mvn clean install'
                 }
             }
         }
